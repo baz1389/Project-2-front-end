@@ -11,6 +11,8 @@
 
     <title>Simple Sidebar - Start Bootstrap Template</title>
 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -39,6 +41,9 @@
                     </a>
                 </li>
                 <li>
+                    <input type="text" value="" placeholder="Search for a word..." id="search" />
+                </li>
+                <li>
                     <a href="#">Define A Word</a>
                 </li>
                 <li>
@@ -46,12 +51,6 @@
                 </li>
                 <li>
                     <a href="#">Favorites</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>
@@ -62,16 +61,48 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
+
+            <!-- sign in and register html -->
+           <!--  <div class="logo"></div>
+            <div class="login-block">
+              <h1>Melcher Wordbook</h1>
+              <input type="text" value="" placeholder="Username" id="username" />
+              <input type="password" value="" placeholder="Password" id="password" />
+              <button id='login'>Submit</button>
+              <hr>
+              <h4>First Time Here?</h4>
+              <input type="text" value="" placeholder="Username" id="username" class="register-username" />
+              <input type="password" value="" placeholder="Password" id="password" class="register-password" />
+               <input type="password_confirmation" value="" placeholder="Password Confirmation" id="password" class="register-password-confirmation" />
+              <button id='register'>Register</button>
+
+            </div> -->
+
+
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        <h1 id="word">squanch</h1>
+                        <p id="definition"> A universal term literally meaning "anything and everything." </p>
+                        <p id="sentence">"Hey Rick, is there a good place for me to squanch around here?"</p>
                     </div>
                 </div>
             </div>
+            <form>
+              <div class="row">
+                <div class="sixColumns">
+                  <label for="exampleWordInput">Your word here:</label>
+                  <input class="u-full-width" type="word" placeholder="Word..." id="exampleWordInput">
+                </div>
+                <div class="sixColumns">
+                  <textarea class="u-full-width" placeholder="Type your definition here" id="exampleDefinition"></textarea>
+                  </select>
+                </div>
+              </div>
+              <textarea class="u-full-width" placeholder="Type a sample sentence here" id="exampleSentence"></textarea>
+              </label>
+              <input class="button-primary" type="submit" value="Submit">
+            </form>
         </div>
         <!-- /#page-content-wrapper -->
 
@@ -83,14 +114,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
 
 </body>
 
