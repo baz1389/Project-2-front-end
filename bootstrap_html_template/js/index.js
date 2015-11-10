@@ -71,9 +71,6 @@ $(document).ready(function() {
   $('#favorite').hide();
   $('#logout').hide();
 
-
-
-
   var form2object = function(form) {
     var data = {};
     $(form).find('input').each(function(index, element) {
@@ -129,6 +126,7 @@ $(document).ready(function() {
     $('#random').show();
     $('#favorite').show();
     $('#logout').show();
+    $('#createNew').hide();
 
   }); //end of login
 
@@ -147,5 +145,10 @@ $(document).ready(function() {
       $('.button-primary').hide();
 
   }); // end of logout
+
+  $( "#define" ).click(function() {
+    $('.col-lg-12').hide();
+    $('#createNew').show();
+  });
 
 });
