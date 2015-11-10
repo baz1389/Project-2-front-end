@@ -1,5 +1,10 @@
 'use strict';
 var callback;
+var user = {
+  id: null,
+  token: null
+};
+
 var mwbapi = {
   mwb: 'http://localhost:3000',
 
@@ -35,7 +40,7 @@ var mwbapi = {
   logout: function (token, callback) {
     this.ajax({
       method: 'DELETE',
-      url: this.mwb + '/logout',
+      url: this.mwb + '/logout' + id,
       headers: {
         Authorization: 'Token token=' + token
       },
@@ -59,10 +64,8 @@ var mwbapi = {
 
 $(document).ready(function() {
   var form2object = function(form) {
-    // debugger;
     var data = {};
     $(form).find('input').each(function(index, element) {
-      // debugger;
       var type = $(this).attr('type');
       if ($(this).attr('name') && type !== 'submit' && type !== 'hidden') {
         data[$(this).attr('name')] = $(this).val();
@@ -72,7 +75,6 @@ $(document).ready(function() {
   };
 
   var wrap = function wrap(root, formData) {
-    // debugger;
     var wrapper = {};
     wrapper[root] = formData;
     return wrapper;
@@ -82,7 +84,7 @@ $(document).ready(function() {
     if (error) {
       console.error(error);
       $('#result').val('status: ' + error.status + ', error: ' +error.error);
-      // return;
+      return;
     }
     $('#result').val(JSON.stringify(data, null, 4));
   };
@@ -95,7 +97,6 @@ $(document).ready(function() {
   });
 
   $('#login').on('submit', function(e) {
-    console.error(error);
     var credentials = wrap('credentials', form2object(this));
     var cb = function cb(error, data) {
       if (error) {
@@ -103,15 +104,12 @@ $(document).ready(function() {
         return;
       }
       callback(null, data);
+      token = data.user.token;
       $('.token').val(data.user.token);
-
+      console.log(data.user.token);
     };
     mwbapi.login(credentials, cb);
     console.log("You logged in!");
-  });
-
-  $('#logout').on('click', function(e) {
-    alert("I was clicked!");
   });
 
 });
