@@ -37,7 +37,7 @@ var mwbapi = {
   },
 
    //Authenticated api actions
-  logout: function (token, callback) {
+  logout: function (id, token, callback) {
     this.ajax({
       method: 'DELETE',
       url: this.mwb + '/logout' + id,
@@ -46,20 +46,7 @@ var mwbapi = {
       },
       dataType: 'json'
     }, callback);
-  },
-
-  // createGame: function (token, callback) {
-  //   this.ajax({
-  //     method: 'POST',
-  //     url: this.ttt + '/games',
-  //     headers: {
-  //       Authorization: 'Token token=' + token
-  //     },
-  //     contentType: 'application/json; charset=utf-8',
-  //     data: JSON.stringify({}),
-  //     dataType: 'json',
-  //   }, callback);
-  // }
+  }
 };
 
 $(document).ready(function() {
@@ -97,19 +84,30 @@ $(document).ready(function() {
   });
 
   $('#login').on('submit', function(e) {
+    e.preventDefault();
     var credentials = wrap('credentials', form2object(this));
     var cb = function cb(error, data) {
       if (error) {
         callback(error);
+        $("#login").html("<strong>Error! Login fail!</strong>");
         return;
       }
-      callback(null, data);
-      token = data.user.token;
+      user.token = data.user.token;
+      user.id = data.user.id;
+
       $('.token').val(data.user.token);
+
       console.log(data.user.token);
+
     };
     mwbapi.login(credentials, cb);
-    console.log("You logged in!");
-  });
+    $('.login-block').hide();
+  }); //end of login
+
+  $('#logout').click(function(e){
+    var token = user.token;
+    var id = user.id;
+    mwbapi.logout()
+  }); // end of logout
 
 });
