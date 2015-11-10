@@ -40,16 +40,24 @@ var mwbapi = {
   logout: function (id, token, callback) {
     this.ajax({
       method: 'DELETE',
-      url: this.mwb + '/logout' + id,
+      url: this.mwb + '/logout/' + id,
       headers: {
         Authorization: 'Token token=' + token
       },
       dataType: 'json'
     }, callback);
-  }
+  },
+
+
 };
 
 $(document).ready(function() {
+
+  $('#sidebar-wrapper').show('#sidebar-brand');
+  // $('#sidebar-wrapper').hide('');
+
+
+
   var form2object = function(form) {
     var data = {};
     $(form).find('input').each(function(index, element) {
@@ -94,20 +102,30 @@ $(document).ready(function() {
       }
       user.token = data.user.token;
       user.id = data.user.id;
-
       $('.token').val(data.user.token);
-
       console.log(data.user.token);
 
     };
     mwbapi.login(credentials, cb);
     $('.login-block').hide();
+    $('#sidebar-wrapper').children().show();
+
   }); //end of login
 
   $('#logout').click(function(e){
-    var token = user.token;
-    var id = user.id;
-    mwbapi.logout()
+      e.preventDefault();
+      var token = user.token;
+      var id = user.id;
+      mwbapi.logout(id, token, callback);
+      $('.login-block').show();
+      $('#sidebar-wrapper').children().hide();
+      $('.container-fluid').hide();
+      $('.container-fluid').hide();
+      $('.row').hide();
+      $('.sixColumns').hide();
+      $('.u-full-width').hide();
+      $('.button-primary').hide();
+
   }); // end of logout
 
 });
