@@ -48,13 +48,29 @@ var mwbapi = {
     }, callback);
   },
 
+  createWord: function (token, callback) {
+    this.ajax({
+      method: 'POST',
+      url: this.mwb + '/words',
+      headers: {
+        Authorization: 'Token token=' + token
+      },
+      contentType: 'application/json; charset=utf-8',
+      data: JSON.stringify({}),
+      dataType: 'json',
+    }, callback);
+  }
 
 };
 
 $(document).ready(function() {
 
-  $('#sidebar-wrapper').show('#sidebar-brand');
-  // $('#sidebar-wrapper').hide('');
+  $('#search').hide();
+  $('#define').hide();
+  $('#random').hide();
+  $('#favorite').hide();
+  $('#logout').hide();
+
 
 
 
@@ -108,7 +124,11 @@ $(document).ready(function() {
     };
     mwbapi.login(credentials, cb);
     $('.login-block').hide();
-    $('#sidebar-wrapper').children().show();
+    $('#search').show();
+    $('#define').show();
+    $('#random').show();
+    $('#favorite').show();
+    $('#logout').show();
 
   }); //end of login
 
