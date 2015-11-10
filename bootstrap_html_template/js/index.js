@@ -29,7 +29,32 @@ var mwbapi = {
       data: JSON.stringify(credentials),
       dataType: 'json'
     }, callback);
-  }
+  },
+
+   //Authenticated api actions
+  logout: function (token, callback) {
+    this.ajax({
+      method: 'DELETE',
+      url: this.mwb + '/logout',
+      headers: {
+        Authorization: 'Token token=' + token
+      },
+      dataType: 'json'
+    }, callback);
+  },
+
+  // createGame: function (token, callback) {
+  //   this.ajax({
+  //     method: 'POST',
+  //     url: this.ttt + '/games',
+  //     headers: {
+  //       Authorization: 'Token token=' + token
+  //     },
+  //     contentType: 'application/json; charset=utf-8',
+  //     data: JSON.stringify({}),
+  //     dataType: 'json',
+  //   }, callback);
+  // }
 };
 
 $(document).ready(function() {
@@ -83,6 +108,10 @@ $(document).ready(function() {
     };
     mwbapi.login(credentials, cb);
     console.log("You logged in!");
+  });
+
+  $('#logout').on('click', function(e) {
+    alert("I was clicked!");
   });
 
 });
