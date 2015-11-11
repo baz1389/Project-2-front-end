@@ -59,6 +59,17 @@ var mwbapi = {
       data: JSON.stringify(word),
       dataType: 'json',
     }, callback);
+  },
+
+  showGame: function (id, token, callback) {
+    this.ajax({
+      method: 'GET',
+      url: this.ttt + '/words/' + id,
+      headers: {
+        Authorization: 'Token token=' + token
+      },
+      dataType: 'json'
+    }, callback);
   }
 
 };
@@ -172,6 +183,24 @@ $(document).ready(function() {
     });
     e.preventDefault();
   });
+
+  $('#search').on('submit', function(e) {
+    alert('Submitted!');
+  });
+
+  // showGame: function (id, token, callback) {
+  //   this.ajax({
+  //     method: 'GET',
+  //     url: this.ttt + '/words/' + id,
+  //     headers: {
+  //       Authorization: 'Token token=' + token
+  //     },
+  //     dataType: 'json'
+  //   }, callback);
+  // }
+
 });
+
+
 
 
