@@ -48,15 +48,15 @@ var mwbapi = {
     }, callback);
   },
 
-  createWord: function (token, callback) {
+  createWord: function (word, token, callback) {
     this.ajax({
       method: 'POST',
       url: this.mwb + '/words',
       headers: {
         Authorization: 'Token token=' + token
       },
-      contentType: 'application/json; charset=utf-8',
-      data: JSON.stringify({}),
+      contentType: 'application/json',
+      data: JSON.stringify(word),
       dataType: 'json',
     }, callback);
   }
@@ -135,6 +135,7 @@ $(document).ready(function() {
       var token = user.token;
       var id = user.id;
       mwbapi.logout(id, token, callback);
+      user.token = null;
       $('.login-block').show();
       $('#sidebar-wrapper').children().hide();
       $('.container-fluid').hide();
@@ -151,4 +152,26 @@ $(document).ready(function() {
     $('#createNew').show();
   });
 
+  //create a new word
+  $('#createNew').on('submit', function(e) {
+    var word = {
+      word : {
+      name: $('#exampleWordInput').val(),
+      definition: $('#exampleDefinition').val(),
+      sample_sentence: $('#exampleSentence').val(),
+      user_id: user.id
+      }
+    };
+    var token = user.token;
+    mwbapi.createWord(word, token, function(err, data) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log(data);
+    });
+    e.preventDefault();
+  });
 });
+
+
