@@ -61,13 +61,26 @@ var mwbapi = {
     }, callback);
   },
 
-  showGame: function (id, token, callback) {
+  searchWord: function (name, token, callback) {
     this.ajax({
       method: 'GET',
+      url: this.mwb + '/words' + '?name=' + name,
+      headers: {
+        Authorization: 'Token token=' + token
+      },
+      dataType: 'json'
+    }, callback);
+  },
+
+  updateWord: function (id, data, token, callback) {
+    this.ajax({
+      method: 'PATCH',
       url: this.ttt + '/words/' + id,
       headers: {
         Authorization: 'Token token=' + token
       },
+      contentType: 'application/json; charset=utf-8',
+      data: JSON.stringify(data),
       dataType: 'json'
     }, callback);
   }
@@ -184,20 +197,56 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
+  //search for a word
   $('#search').on('submit', function(e) {
-    alert('Submitted!');
+    var token = user.token;
+    var name = form2object(this).word;
+    mwbapi.searchWord(name, token, function(err, data) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log(data);
+    });
+    e.preventDefault();
+
   });
 
-  // showGame: function (id, token, callback) {
+  // searchWord: function (name, token, callback) {
   //   this.ajax({
   //     method: 'GET',
-  //     url: this.ttt + '/words/' + id,
+  //     url: this.mwb + '/words' + '?name=' + name,
   //     headers: {
   //       Authorization: 'Token token=' + token
   //     },
   //     dataType: 'json'
   //   }, callback);
   // }
+
+
+
+  //updates a word
+  $('#buttonUpdate').on('click', function(e) {
+    $('.col-lg-12').hide();
+    $('#createNew').show();
+    var updateWord = $('#word').text();
+    var updateDefinition = $('#definition').text();
+    var updateSentence = $('#sentence').text();
+    $('#exampleWordInput').text(updateWord);
+    debugger;
+  });
+// updateWord: function (id, data, token, callback) {
+//     this.ajax({
+//       method: 'PATCH',
+//       url: this.ttt + '/words/' + id,
+//       headers: {
+//         Authorization: 'Token token=' + token
+//       },
+//       contentType: 'application/json; charset=utf-8',
+//       data: JSON.stringify(data),
+//       dataType: 'json'
+//     }, callback);
+//   }
 
 });
 
