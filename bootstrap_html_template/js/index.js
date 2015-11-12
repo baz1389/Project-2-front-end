@@ -195,20 +195,29 @@ $(document).ready(function() {
       console.log(data);
     });
     e.preventDefault();
+
   });
 
   //search for a word
   $('#search').on('submit', function(e) {
+    e.preventDefault();
     var token = user.token;
     var name = form2object(this).word;
+    // debugger;
     mwbapi.searchWord(name, token, function(err, data) {
       if (err) {
         console.error(err);
         return;
       }
       console.log(data);
+      // debugger;
+      $('#word').text(name);
+      // debugger;
+      $('#definition').text(data.words[0].definition);
+      // debugger;
+      $('#sentence').text(data.words[0].sample_sentence);
+      // debugger;
     });
-    e.preventDefault();
 
   });
 
