@@ -4,7 +4,7 @@
 
 ##Overview
 
-This project was designed and cloned after a combination of [Urban Dictionary](http://www.urbandictionary.com/) and [Dictionary.com](http://dictionary.reference.com/). This single-page application (SPA) allows users to read, search, define and update words or idioms/phrases. Users must create an account before being able to use the site's functionality.
+This project was designed and cloned after a combination of [Urban Dictionary](http://www.urbandictionary.com/) and [Dictionary.com](http://dictionary.reference.com/). This single-page application (SPA) allows users to read, search, define, and update words or idioms/phrases. Users must create an account before being able to use the site's functionality.
 
 To see the **back-end** repository, click [here](https://github.com/baz1389/project2-api).
 
@@ -22,11 +22,18 @@ To see the **back-end** repository, click [here](https://github.com/baz1389/proj
 - **Ajax, jquery, and javascript implementation on the front end**
       - One method at a time.
 
-##Unsolved Problems and Future Additions
+##Unsolved Problems
+ - On login, I have hardcoded the same word to show up every time. I would like the landing word to be random every time someone logs in.
+ - My search function has to have exactly the correct string to be able to search. I need to implement substring functionality (.downcase/.upcase methods??).
+      - Need to throw an error or have some indication if a word doesn't exist yet.
  - HTML and CSS needs to improve when I have free time to do so.
- - Favorites List
- - Word of the Day
- - Random Word
+
+##Future Additions
+ - Favorites List.
+ - Have a page where you can click a letter of the alphabet and see all words (or 20 per page) starting with that letter.
+ - Word of the Day.
+ - Random Word.
+ - Share a word on Facebook/Twitter/some other social media platform.
 
 
 ##Sources
