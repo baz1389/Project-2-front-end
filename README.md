@@ -10,16 +10,16 @@ To see the **back-end** repository, click [here](https://github.com/baz1389/proj
 
 ##Approach
 
-1.) Wireframing and User Stories.
+- Wireframing and User Stories.
       - [Wireframes](http://imgur.com/a/kxTis)
       - [User Stories](http://imgur.com/FnvgSkw)
       - [ERM Diagram](http://imgur.com/BWpHA5R)
-2.) Create my back-end.
+- Create my back-end.
       - What will my database need?
       - Model relationships and controller functionality.
       - What routes do I need?
-3.) Basic HTML/CSS implementation.
-4.) Ajax, jquery, and javascript implementation on the front end.
+- Basic HTML/CSS implementation.
+- Ajax, jquery, and javascript implementation on the front end.
       - One method at a time.
 
 ##Unsolved Problems and Future Additions
