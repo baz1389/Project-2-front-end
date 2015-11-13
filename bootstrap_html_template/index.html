@@ -1,124 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Melcher Wordbook</title>
-
-    <link rel="stylesheet" type="text/css" href="css/loginStyle.css">
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
-
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Melcher Wordbook</title>
+      <link rel="stylesheet" type="text/css" href="css/loginStyle.css">
+      <!-- Bootstrap Core CSS -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link href="css/simple-sidebar.css" rel="stylesheet">
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <div id="wrapper">
+         <!-- Sidebar -->
+         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Melcher Wordbook
-                    </a>
-                </li>
-                <form id="search">
-                <li>
-                    <input type="text" value="" placeholder="Search for a word..." id="search" />
-                </li>
-                </form>
-                <li id="define">
-                    <a  href="#">Define A Word</a>
-                </li>
-                <li id="random">
-                    <a href="#">Random Word</a>
-                </li>
-                <li id="favorite">
-                    <a href="#">Favorites</a>
-                </li>
-                <li>
-                    <button id="logout">Logout</button>
-                </li>
+               <li class="sidebar-brand">
+                  <a href="#">
+                  Melcher Wordbook
+                  </a>
+               </li>
+               <li>
+                  <form id="search">
+                     <!-- <li> -->
+                     <input name="word" type="text" value="" placeholder="Search for a word..." />
+                     <!-- </li> -->
+                  </form>
+               </li>
+               <li id="define">
+                  <a  href="#">Define A Word</a>
+               </li>
+               <li id="random">
+                  <a href="#">Random Word</a>
+               </li>
+               <li id="favorite">
+                  <a href="#">Favorites</a>
+               </li>
+               <li>
+                  <button id="logout">Logout</button>
+               </li>
             </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-
+         </div>
+         <!-- /#sidebar-wrapper -->
+         <!-- Page Content -->
+         <div id="page-content-wrapper">
             <!-- sign in and register html -->
             <div class="logo"></div>
             <div class="login-block">
-              <h1>Melcher Wordbook</h1>
-              <form id="register">
-                <input name="email" type="text" placeholder="Email">
-                <input name="password" type="password" placeholder="Password">
-                <input name="password_confirmation" type="password" placeholder="Password Confirmation">
-                <input name="register" type="submit" value="Register">
-              </form>
-              <form id="login">
-                <input name="email" type="text" placeholder="Email">
-                <input name="password" type="password" placeholder="Password">
-                <input name="login" type="submit" value="Login">
-              </form>
+               <h1>Melcher Wordbook</h1>
+               <form id="register">
+                  <input name="email" type="text" placeholder="Email">
+                  <input name="password" type="password" placeholder="Password">
+                  <input name="password_confirmation" type="password" placeholder="Password Confirmation">
+                  <input name="register" type="submit" value="Register">
+               </form>
+               <form id="login">
+                  <input name="email" type="text" placeholder="Email">
+                  <input name="password" type="password" placeholder="Password">
+                  <input name="login" type="submit" value="Login">
+               </form>
             </div>
-
-
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 id="word">squanch <button id="buttonFavorite">Favorite</button></h1>
-                        <p id="definition"> A universal term literally meaning "anything and everything." </p>
-                        <p id="sentence">"Hey Rick, is there a good place for me to squanch around here?"</p>
-                    </div>
-                </div>
+               <div class="row">
+                  <div class="col-lg-12">
+                     <h1 id="word">squanch </h1>
+                     <button id="displayWordUpdateForm">Update</button>
+                     <p id="definition"> A universal term literally meaning "anything and everything." </p>
+                     <p id="sentence">"Hey Rick, is there a good place for me to squanch around here?"</p>
+                     <p id="wordID">1</p>
+                  </div>
+               </div>
             </div>
             <form id="createNew">
-              <div class="row">
-                <div class="sixColumns">
-                  <label for="exampleWordInput">Your word or phrase here:</label>
-                  <input class="u-full-width" type="word" placeholder="Word..." id="exampleWordInput">
-                </div>
-                <div class="sixColumns">
-                  <textarea class="u-full-width" placeholder="Type your definition here" id="exampleDefinition"></textarea>
-                  </select>
-                </div>
-              </div>
-              <textarea class="u-full-width" placeholder="Type a sample sentence here" id="exampleSentence"></textarea>
-              </label>
-              <input class="button-primary" type="submit" value="Submit">
+               <div class="row">
+                  <div class="sixColumns">
+                     <label for="exampleWordInput">Your word or phrase here:</label>
+                     <input class="u-full-width" type="word" placeholder="Word..." id="exampleWordInput">
+                  </div>
+                  <div class="sixColumns">
+                     <textarea class="u-full-width" placeholder="Type your definition here" id="exampleDefinition"></textarea>
+                     </select>
+                  </div>
+               </div>
+               <textarea class="u-full-width" placeholder="Type a sample sentence here" id="exampleSentence"></textarea>
+               </label>
+               <div class="sixColumns">
+                  <label for="exampleWordID">Word ID:</label>
+                  <input class="u-full-width"  placeholder="Word ID" id="exampleWordID">
+               </div>
+               <input class="button-primary" type="submit" value="Submit">
             </form>
-        </div>
-        <!-- /#page-content-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <script src="js/index.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
+         </div>
+         <div id="updateForm">
+            <form id="updateWord">
+               <div class="row">
+                  <div class="sixColumns">
+                     <label for="UpdateWordInput">Update Word:</label>
+                     <input class="u-full-width" type="word" placeholder="Word..." id="updateWordInput">
+                  </div>
+                  <div class="sixColumns">
+                     <textarea class="u-full-width" placeholder="Update definition here" id="updateDefinition"></textarea>
+                     </select>
+                  </div>
+               </div>
+               <textarea class="u-full-width" placeholder="Update sample sentence here" id="updateSentence"></textarea>
+               </label>
+               <div class="sixColumns">
+                  <label for="updateWordID">Word ID:</label>
+                  <input class="u-full-width"  placeholder="Word ID" id="updateWordID">
+               </div>
+               <input class="updateButton" type="submit" value="Update">
+            </form>
+         </div>
+         <!-- /#page-content-wrapper -->
+      </div>
+      <!-- /#wrapper -->
+      <!-- jQuery -->
+      <script src="js/jquery.js"></script>
+      <script src="js/index.js"></script>
+      <!-- Bootstrap Core JavaScript -->
+      <script src="js/bootstrap.min.js"></script>
+   </body>
 </html>
