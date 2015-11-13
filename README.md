@@ -2,6 +2,8 @@
 
 **PUT IN HEROKU LINK HERE**
 
+**NOTE: This is still a *work in progress* and is not anywhere near a finished product**
+
 ##Overview
 
 This project was designed and cloned after a combination of [Urban Dictionary](http://www.urbandictionary.com/) and [Dictionary.com](http://dictionary.reference.com/). This single-page application (SPA) allows users to read, search, define, and update words or idioms/phrases. Users must create an account before being able to use the site's functionality.
@@ -26,7 +28,11 @@ To see the **back-end** repository, click [here](https://github.com/baz1389/proj
  - On login, I have hardcoded the same word to show up every time. I would like the landing word to be random every time someone logs in.
  - My search function has to have exactly the correct string to be able to search. I need to implement substring functionality (.downcase/.upcase methods??).
       - Need to throw an error or have some indication if a word doesn't exist yet.
+ - If I hit the login button it still removes the login menu and shows the main landing page
+ - I hard coded my update method by showing each word ID on the page, s now there is always a number just hanging out.
  - HTML and CSS needs to improve when I have free time to do so.
+ - I need to refresh the page a lot to do multiple events
+ - Update works, however, the server throws a 500 error.
 
 ##Future Additions
  - Favorites List.
