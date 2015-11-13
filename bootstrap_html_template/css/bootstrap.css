@@ -117,6 +117,8 @@ textarea {
   margin: 0;
   font: inherit;
   color: inherit;
+  width: 66%;
+  height: 300px
 }
 button {
   overflow: visible;
@@ -6581,4 +6583,16 @@ button.close {
     display: none !important;
   }
 }
+
+textarea {
+  width: 66%;
+  height: 100px;
+}
+
+#buttonFavorite {
+  font-size: 12px;
+}
+
+
+
 /*# sourceMappingURL=bootstrap.css.map */
