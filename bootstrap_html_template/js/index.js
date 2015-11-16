@@ -6,6 +6,7 @@ var user = {
 };
 
 var mwbapi = {
+
   mwb: 'https://fathomless-island-1134.herokuapp.com',
 
   ajax: function(config, cb) {
