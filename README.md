@@ -1,7 +1,7 @@
 #Melcher Wordbook
 
-Heroku URL: https://fathomless-island-1134.herokuapp.com/
-Github Pages URL: http://baz1389.github.io/Project-2-front-end
+- Heroku URL: https://fathomless-island-1134.herokuapp.com/
+- Github Pages URL: http://baz1389.github.io/Project-2-front-end
 
 **NOTE: This is still a *work in progress* and is not anywhere near a finished product**
 
