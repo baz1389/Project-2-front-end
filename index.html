@@ -1,139 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <title>Melcher Wordbook</title>
-      <!-- Bootstrap Core CSS -->
-      <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-      <!-- Custom CSS -->
-      <link href="assets/css/simple-sidebar.css" rel="stylesheet">
-      <link href="assets/css/styles.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Melcher Wordbook</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/simple-sidebar.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+  </head>
 
-   </head>
-   <body>
-      <div id="wrapper">
-         <!-- Sidebar -->
-         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-               <li class="sidebar-brand">
-                  <a href="#">
-                  Melcher Wordbook
-                  </a>
-               </li>
-               <li>
-                  <form id="search">
-                     <!-- <li> -->
-                     <input name="word" type="text" value="" placeholder="Search for a word..." />
-                     <!-- </li> -->
-                  </form>
-               </li>
-               <li id="define">
-                  <a  href="#">Define A Word</a>
-               </li>
-               <li id="random">
-                  <a href="#">Random Word</a>
-               </li>
-               <li id="favorite">
-                  <a href="#">Favorites</a>
-               </li>
-               <li>
-                  <button id="logout">Logout</button>
-               </li>
-            </ul>
-         </div>
-         <!-- /#sidebar-wrapper -->
-         <!-- Page Content -->
-         <div id="page-content-wrapper">
+  <body>
 
-            <!-- sign in and register html -->
-            <div class="logo"></div>
-            <div class="register-block">
-               <h1>Register</h1>
-               <form id="register">
-                  <input name="email" type="text" placeholder="Email">
-                  <input name="password" type="password" placeholder="Password">
-                  <input name="password_confirmation" type="password" placeholder="Password Confirmation">
-                  <input name="register" type="submit" value="Register">
-               </form>
-                <p>Already a member? <a href="#" class="login-a2"> Login.</a></p>
-            </div>
-            <!-- loging start -->
-            <div class="login-block">
-               <h1>Login</h1>
-               <form id="login">
-                  <input name="email" type="text" placeholder="Email">
-                  <input name="password" type="password" placeholder="Password">
-                  <input name="login" type="submit" value="Login">
-               </form>
-               <p>First time here? <a href="#" class="register-a2"> Register.</a></p>
-            </div>
-            <!-- loging end -->
+    <div id="wrapper">
 
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-lg-12">
-                     <h1 id="word">squanch </h1>
-                     <button id="displayWordUpdateForm">Update</button>
-                     <p id="definition"> A universal term literally meaning "anything and everything." </p>
-                     <p id="sentence">"Hey Rick, is there a good place for me to squanch around here?"</p>
-                     <p id="wordID">1</p>
-                  </div>
-               </div>
-            </div>
-            <form id="createNew">
-               <div class="row">
-                  <div class="sixColumns">
-                     <label for="exampleWordInput">Your word or phrase here:</label>
-                     <input class="u-full-width" type="word" placeholder="Word..." id="exampleWordInput">
-                  </div>
-                  <div class="sixColumns">
-                     <textarea class="u-full-width" placeholder="Type your definition here" id="exampleDefinition"></textarea>
-                     </select>
-                  </div>
-               </div>
-               <textarea class="u-full-width" placeholder="Type a sample sentence here" id="exampleSentence"></textarea>
-               </label>
-               <div class="sixColumns">
-                  <label for="exampleWordID">Word ID:</label>
-                  <input class="u-full-width"  placeholder="Word ID" id="exampleWordID">
-               </div>
-               <input class="button-primary" type="submit" value="Submit">
-            </form>
-         </div>
-         <div id="updateForm">
-            <form id="updateWord">
-               <div class="row">
-                  <div class="sixColumns">
-                     <label for="UpdateWordInput">Update Word:</label>
-                     <input class="u-full-width" type="word" placeholder="Word..." id="updateWordInput">
-                  </div>
-                  <div class="sixColumns">
-                     <textarea class="u-full-width" placeholder="Update definition here" id="updateDefinition"></textarea>
-                     </select>
-                  </div>
-               </div>
-               <textarea class="u-full-width" placeholder="Update sample sentence here" id="updateSentence"></textarea>
-               </label>
-               <div class="sixColumns">
-                  <label for="updateWordID">Word ID:</label>
-                  <input class="u-full-width"  placeholder="Word ID" id="updateWordID">
-               </div>
-               <input class="updateButton" type="submit" value="Update">
-            </form>
-         </div>
-         <!-- /#page-content-wrapper -->
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a href="#">
+          Melcher Wordbook
+          </a>
+        </li>
+        <li>
+          <form id="search">
+            <input name="word" type="text" value="" placeholder="Search for a word..." />
+          </form>
+        </li>
+        <li id="define">
+          <a  href="#">Define A Word</a>
+        </li>
+        <li id="random">
+          <a href="#">Random Word</a>
+        </li>
+        <li id="favorite">
+          <a href="#">Favorites</a>
+        </li>
+        <li>
+          <button id="logout">Logout</button>
+        </li>
+      </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <!-- sign in and register html -->
+      <div class="logo"></div>
+      <div class="register-block">
+        <h1>Register</h1>
+        <form id="register">
+          <input name="email" type="text" placeholder="Email">
+          <input name="password" type="password" placeholder="Password">
+          <input name="password_confirmation" type="password" placeholder="Password Confirmation">
+          <input name="register" type="submit" value="Register">
+        </form>
+        <p>Already a member? <a href="#" class="login-a2"> Login.</a></p>
       </div>
-      <!-- /#wrapper -->
-      <!-- jQuery -->
-      <script src="assets/js/jquery.js"></script>
-      <script src="assets/js/handlebars.js"></script>>
-      <script src="assets/js/api.js"></script>
-      <script src="assets/js/index.js"></script>
-      <!-- Bootstrap Core JavaScript -->
-      <script src="assets/js/bootstrap.min.js"></script>
-   </body>
+
+      <!-- loging start -->
+      <div class="login-block">
+        <h1>Login</h1>
+        <form id="login">
+          <input name="email" type="text" placeholder="Email">
+          <input name="password" type="password" placeholder="Password">
+          <input name="login" type="submit" value="Login">
+        </form>
+        <p>First time here? <a href="#" class="register-a2"> Register.</a></p>
+      </div>
+      <!-- loging end -->
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 id="word">squanch </h1>
+            <button id="displayWordUpdateForm">Update</button>
+            <p id="definition"> A universal term literally meaning "anything and everything." </p>
+            <p id="sentence">"Hey Rick, is there a good place for me to squanch around here?"</p>
+            <p id="wordID">1</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form id="createNew">
+          <div class="row">
+            <div class="sixColumns">
+              <label for="exampleWordInput">Your word or phrase here:</label>
+              <input class="u-full-width" type="word" placeholder="Word..." id="exampleWordInput">
+            </div>
+            <div class="sixColumns">
+              <textarea class="u-full-width" placeholder="Type your definition here" id="exampleDefinition"></textarea>
+              </select>
+            </div>
+          </div>
+          <textarea class="u-full-width" placeholder="Type a sample sentence here" id="exampleSentence"></textarea>
+          </label>
+          <div class="sixColumns">
+            <label for="exampleWordID">Word ID:</label>
+            <input class="u-full-width"  placeholder="Word ID" id="exampleWordID">
+          </div>
+          <input class="button-primary" type="submit" value="Submit">
+        </form>
+      </div>
+
+      <div id="single-word" class="singleWordContainer">
+      </div>
+
+      <script id="show-one-word" type = "text/x-handlebars-template">
+        <h2>{{name}}</h2>
+        <p>{{definition}}</p>
+        <br>
+        <p>{{sample_sentence}}</p>
+        <br>
+        <button id="edit-button">Edit</button>
+        <button id="confirm-edit-button" data-id={{id}}>Confirm Edit</button>
+        <button id="delete-button" data-id={{id}}>Delete</button>
+      </script>
+
+      <div id="updateForm">
+        <form id="updateWord">
+          <div class="row">
+            <div class="sixColumns">
+              <label for="UpdateWordInput">Update Word:</label>
+              <input class="u-full-width" type="word" placeholder="Word..." id="updateWordInput">
+            </div>
+            <div class="sixColumns">
+              <textarea class="u-full-width" placeholder="Update definition here" id="updateDefinition"></textarea>
+              </select>
+            </div>
+          </div>
+          <textarea class="u-full-width" placeholder="Update sample sentence here" id="updateSentence"></textarea>
+          </label>
+          <div class="sixColumns">
+            <label for="updateWordID">Word ID:</label>
+            <input class="u-full-width"  placeholder="Word ID" id="updateWordID">
+          </div>
+          <input class="updateButton" type="submit" value="Update">
+        </form>
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+   </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/handlebars.js"></script>>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/index.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
 </html>
