@@ -9,7 +9,20 @@ $(document).ready(function() {
   $('#logout').hide();
   $('#updateForm').hide();
   $('.container-fluid').hide();
+  $('.register-block').hide();
   $('#createNew').hide();
+
+  $('.register-a2').on('click', function(e) {
+    e.preventDefault();
+    $('.register-block').show();
+    $('.login-block').hide();
+  });
+
+  $('.login-a2').on('click', function(e) {
+    e.preventDefault();
+    $('.register-block').hide();
+    $('.login-block').show();
+  });
 
   var form2object = function(form) {
     var data = {};
@@ -43,6 +56,8 @@ $(document).ready(function() {
     console.log(form2object(this));
     var credentials = wrap('credentials', form2object(this));
     mwbapi.register(credentials, callback);
+
+    $('.register-block').hide();
     e.preventDefault();
   });
 
@@ -53,24 +68,27 @@ $(document).ready(function() {
       if (error) {
         callback(error);
         $('#login').html('<strong>Error! Login fail!</strong>');
-        return;
+        // return;
       }
 
       user.token = data.user.token;
       user.id = data.user.id;
       $('.token').val(data.user.token);
       console.log(data.user.token);
+      $('.login-block').hide();
+      $('#search').show();
+      $('#define').show();
+      $('#random').show();
+      $('#favorite').show();
+      $('#logout').show();
+      $('#createNew').hide();
+      $('.register-block').hide();
+      $('.container-fluid').show();
 
     };
 
     mwbapi.login(credentials, cb);
-    $('.login-block').hide();
-    $('#search').show();
-    $('#define').show();
-    $('#random').show();
-    $('#favorite').show();
-    $('#logout').show();
-    $('#createNew').hide();
+
 
   }); //end of login
 
