@@ -41,7 +41,7 @@ body {
     margin-bottom: 20px;
     font-size: 14px;
     font-family: sans-serif;
-    padding: 0 20px 0 50px;
+    padding-left: 10px;
     outline: none;
 }
 
@@ -125,4 +125,13 @@ h4 {
 
 .register-login {
   padding: 20px 10%;
+}
+
+.submitButton {
+    background: #336699;
+    color: white;
+}
+
+.submitButton:hover {
+    background: #CC9933;
 }
