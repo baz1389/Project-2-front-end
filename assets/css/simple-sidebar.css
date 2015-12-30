@@ -129,35 +129,23 @@
     }
 
     #logout {
-        border-top: 1px solid #96d1f8;
-       background: #65a9d7;
-       background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
-       background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
-       background: -moz-linear-gradient(top, #3e779d, #65a9d7);
-       background: -ms-linear-gradient(top, #3e779d, #65a9d7);
-       background: -o-linear-gradient(top, #3e779d, #65a9d7);
-       padding: 5px 10px;
-       -webkit-border-radius: 17px;
-       -moz-border-radius: 17px;
-       border-radius: 17px;
-       -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-       -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-       box-shadow: rgba(0,0,0,1) 0 1px 0;
-       text-shadow: rgba(0,0,0,.4) 0 1px 0;
-       color: white;
-       font-size: 17px;
-       font-family: Georgia, serif;
-       text-decoration: none;
-       vertical-align: middle;
+      width: 70px;
+      height: 40px;
+      border: 0;
+      background-color: #245c81;
+      border-radius: 10px;
+      vertical-align: center;
+      color: #fff;
+      position: absolute;
+      margin-left: 15px;
+
     }
 
     #logout:hover {
-       border-top-color: #28597a;
-       background: #28597a;
-       color: #ccc;
+      background: orange;
+      color: #ccc;
    }
     #logout:active {
-       border-top-color: #1b435e;
-       background: #1b435e;
+      background: white;
    }
 }

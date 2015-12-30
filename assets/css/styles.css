@@ -136,27 +136,17 @@ h4 {
     background: #CC9933;
 }
 
-/*.searchButton {
-    float: right;
-    height: 30px;
-    width: 55px;
-    text-align: center;
-    vertical-align: center;
-    margin-top: 5px;
-    border-left: 5px;
-    position: relative;
-    padding-left: 5px;
-    border-left: 5px;
-    /*background: #2B76CC;*/
-
-
 .searchButton {
-  width: 65px;
+  width: 75px;
+  height: 33px;
   border: 0;
+  text-align: center;
+  vertical-align: middle;
   background-color: #245c81;
-  border-radius: 15px;
+  border-radius: 10px;
   color: #fff;
   float: right;
+  /*margin-bottom: 3px;*/
   position: absolute;
 }
 
@@ -166,3 +156,12 @@ h4 {
     border: 5px;
     padding-right: 1px;
 }
+
+.searchButton:hover {
+    background: orange;
+}
+
+/*#wordID {
+    background: white;
+    color: white;
+}*/
