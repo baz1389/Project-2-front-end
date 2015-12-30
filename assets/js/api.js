@@ -65,10 +65,10 @@ var mwbapi = {
     }, callback);
   },
 
-  searchWord: function(name, token, callback) {
+  searchWord: function(id, token, callback) {
     this.ajax({
       method: 'GET',
-      url: this.mwb + '/words' + '?name=' + name,
+      url: this.mwb + '/words' + '?name=' + id,
       headers: {
         Authorization: 'Token token=' + token,
       },

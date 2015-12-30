@@ -116,22 +116,25 @@ $(document).ready(function() {
   //create a new word
   $('#createNew').on('submit', function(e) {
     var word = {
-      word: {
-        id: $('#exampleWordID').val(),
         name: $('#exampleWordInput').val(),
         definition: $('#exampleDefinition').val(),
         sample_sentence: $('#exampleSentence').val(),
         user_id: user.id,
-      }
     };
-
+    debugger;
     mwbapi.createWord(word, user.token, function(err, data) {
       if (err) {
         console.error(err);
         return;
       }
-
+      debugger;
       console.log(data);
+      var template = Handlebars.compile($("#show-one-word").html());
+      var newHTML = template(data[0]);
+      $("#createNew").hide();
+      $(".container-fluid").hide();
+      $("#single-word").show();
+      $("#single-word").html(newHTML);
     });
 
     e.preventDefault();
@@ -153,6 +156,7 @@ $(document).ready(function() {
         $('#sentence').text(data.words[0].sample_sentence);
         $('#wordID').text(data.words[0].id);
       });
+
     }); //end of searchWord
 
   //updates a word
