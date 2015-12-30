@@ -116,10 +116,13 @@ $(document).ready(function() {
   //create a new word
   $('#createNew').on('submit', function(e) {
     var word = {
+      word: {
+        id: $('#exampleWordID').val(),
         name: $('#exampleWordInput').val(),
         definition: $('#exampleDefinition').val(),
         sample_sentence: $('#exampleSentence').val(),
         user_id: user.id,
+      }
     };
     debugger;
     mwbapi.createWord(word, user.token, function(err, data) {

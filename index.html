@@ -113,15 +113,15 @@
       </div>
 
       <script id="show-one-word" type = "text/x-handlebars-template">
-        <h2>{{name}}</h2>
+        <h2>{{word.word.name}}</h2>
         <br>
         <h3>Definition</h3>
         <br>
-        <p>{{definition}}</p>
+        <p>{{word.word.definition}}</p>
         <br>
         <h3>Sample Sentence</h3>
         <br>
-        <p>{{sample_sentence}}</p>
+        <p>{{word.word.sample_sentence}}</p>
         <br>
         <button id="edit-button">Edit</button>
         <button id="confirm-edit-button" data-id={{id}}>Confirm Edit</button>
