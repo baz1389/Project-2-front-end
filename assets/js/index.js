@@ -111,29 +111,30 @@ $(document).ready(function() {
   $('#define').click(function() {
       $('.col-lg-12').hide();
       $('#createNew').show();
+      $('#single-word').hide();
     });
 
   //create a new word
   $('#createNew').on('submit', function(e) {
     var word = {
       word: {
-        id: $('#exampleWordID').val(),
+        // id: $('#exampleWordID').val(),
         name: $('#exampleWordInput').val(),
         definition: $('#exampleDefinition').val(),
         sample_sentence: $('#exampleSentence').val(),
         user_id: user.id,
       }
     };
-    debugger;
+
     mwbapi.createWord(word, user.token, function(err, data) {
       if (err) {
         console.error(err);
         return;
       }
-      debugger;
+
       console.log(data);
       var template = Handlebars.compile($("#show-one-word").html());
-      var newHTML = template(data[0]);
+      var newHTML = template(data);
       $("#createNew").hide();
       $(".container-fluid").hide();
       $("#single-word").show();
@@ -146,6 +147,7 @@ $(document).ready(function() {
   //search for a word
   $('#search').on('submit', function(e) {
       e.preventDefault();
+
       var name = form2object(this).word;
 
       mwbapi.searchWord(name, user.token, function(err, data) {
@@ -154,10 +156,17 @@ $(document).ready(function() {
           return;
         }
 
-        $('#word').text(name);
-        $('#definition').text(data.words[0].definition);
-        $('#sentence').text(data.words[0].sample_sentence);
-        $('#wordID').text(data.words[0].id);
+        var template = Handlebars.compile($("#show-one-word").html());
+        var newHTML = template(data);
+        $("#createNew").hide();
+        $(".container-fluid").hide();
+        $("#single-word").show();
+        $("#single-word").html(newHTML);
+
+        // $('#word').text(name);
+        // $('#definition').text(data.words[0].definition);
+        // $('#sentence').text(data.words[0].sample_sentence);
+        // $('#wordID').text(data.words[0].id);
       });
 
     }); //end of searchWord
