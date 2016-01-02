@@ -11,6 +11,7 @@ $(document).ready(function() {
   $('.container-fluid').hide();
   $('.register-block').hide();
   $('#createNew').hide();
+  $('#single-word').hide();
 
   $('.register-a2').on('click', function(e) {
     e.preventDefault();
@@ -106,6 +107,7 @@ $(document).ready(function() {
     $('.sixColumns').hide();
     $('.u-full-width').hide();
     $('.button-primary').hide();
+    $('#single-word').hide();
   }); // end of logout
 
   $('#define').click(function() {

@@ -5,12 +5,14 @@
 
 body {
     font-family: sans-serif;
+    /*background-color: #D3D3D3;*/
+    color: black;
 }
 
 .logo {
     width: 213px;
     height: 36px;
-    background: url('http://i.imgur.com/fd8Lcso.png') no-repeat;
+    /*background: url('http://i.imgur.com/fd8Lcso.png') no-repeat;*/
     margin: 30px auto;
 }
 
@@ -161,7 +163,14 @@ h4 {
     background: orange;
 }
 
-/*#wordID {
-    background: white;
-    color: white;
-}*/
+#single-word > h4 {
+  text-align: left;
+  font-size: 24px;
+  color: #CC9933;
+}
+
+#single-word > h2 {
+  /*text-align: center;*/
+  font-size: 48px;
+}
+
