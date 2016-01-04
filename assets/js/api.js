@@ -89,13 +89,13 @@ var mwbapi = {
     }, callback);
   },
 
-  deleteWord: function (id, callback) {
+  deleteWord: function (id, token, callback) {
     this.ajax({
       method: 'DELETE',
       url: this.mwb + '/words/' + id,
-      // headers: {
-      //   Authorization: 'Token token=' + token,
-      // },
+      headers: {
+        Authorization: 'Token token=' + token,
+      },
       contentType: 'application/json'
     }, callback);
   }

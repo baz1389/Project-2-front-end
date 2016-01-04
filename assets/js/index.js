@@ -173,21 +173,24 @@ $(document).ready(function() {
 
     }); //end of searchWord
 
-  //updates a word
 
+  //deletes a word
   $(document).on("click", "#delete-button", function(e){
     e.preventDefault();
     var id = $(this).data("id");
     console.log("id is " + id);
-    mwbapi.deleteWord(id, function(err, data) {
+    mwbapi.deleteWord(id, user.token, function(err, data) {
       if (err) {
         console.error(err);
         return;
       }
+      console.log(data);
+      $("single-word").empty().hide();
+      $("#single-word > h2").text("Successfully deleted!");
     });
   });
 
-
+  //updates a word
 
   // $('#displayWordUpdateForm').on('click', function(e) {
   //     e.preventDefault();
