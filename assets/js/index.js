@@ -174,35 +174,53 @@ $(document).ready(function() {
     }); //end of searchWord
 
   //updates a word
-  $('#displayWordUpdateForm').on('click', function(e) {
-      e.preventDefault();
 
-      $('.col-lg-12').hide();
-      $('#updateForm').show();
-  });
-
-
-  $('#updateForm').on('submit', function(e) {
-    var wordId = $('#updateWordID').val();
-
-    var word = {
-      word: {
-        name: $('#updateWordInput').val(),
-        definition: $('#updateDefinition').val(),
-        sample_sentence: $('#updateSentence').val(),
-        user_id: user.id
-      }
-    }
-
-    mwbapi.updateWord(wordId, word, user.token, function(err, data) {
+  $(document).on("click", "#delete-button", function(e){
+    e.preventDefault();
+    var id = $(this).data("id");
+    console.log("id is " + id);
+    mwbapi.deleteWord(id, function(err, data) {
       if (err) {
         console.error(err);
         return;
       }
-      $('.col-lg-12').show();
-      $('#createNew').hide();
-      console.log(data);
-      e.preventDefault();
     });
   });
+
+
+
+  // $('#displayWordUpdateForm').on('click', function(e) {
+  //     e.preventDefault();
+
+  //     $('.col-lg-12').hide();
+  //     $('#updateForm').show();
+  // });
+
+
+  // $('#updateForm').on('submit', function(e) {
+  //   var wordId = $('#updateWordID').val();
+
+  //   var word = {
+  //     word: {
+  //       name: $('#updateWordInput').val(),
+  //       definition: $('#updateDefinition').val(),
+  //       sample_sentence: $('#updateSentence').val(),
+  //       user_id: user.id
+  //     }
+  //   }
+
+  //   mwbapi.updateWord(wordId, word, user.token, function(err, data) {
+  //     if (err) {
+  //       console.error(err);
+  //       return;
+  //     }
+  //     $('.col-lg-12').show();
+  //     $('#createNew').hide();
+  //     console.log(data);
+  //     e.preventDefault();
+  //   });
+  // });
+
+
+
 });
