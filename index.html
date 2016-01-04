@@ -82,7 +82,6 @@
             <button id="displayWordUpdateForm">Update</button>
             <p id="definition"> A universal term literally meaning "anything and everything." </p>
             <p id="sentence">"Hey Rick, is there a good place for me to squanch around here?"</p>
-            <p id="wordID">1</p>
           </div>
         </div>
       </div>
@@ -90,21 +89,22 @@
       <div>
         <form id="createNew">
           <div class="row">
+            <h2 id="defineCreate">Define a Word!</h2>
+            <br>
             <div class="sixColumns">
-              <label for="exampleWordInput">Your word or phrase here:</label>
+              <h4>Your word or phrase here:</h4>
               <input class="u-full-width" type="word" placeholder="Word..." id="exampleWordInput">
             </div>
             <div class="sixColumns">
-              <textarea class="u-full-width" placeholder="Type your definition here" id="exampleDefinition"></textarea>
+              <h4>Defintion:</h4>
+              <textarea class="u-full-width" placeholder="Type your definition here..." id="exampleDefinition"></textarea>
               </select>
             </div>
           </div>
-          <textarea class="u-full-width" placeholder="Type a sample sentence here" id="exampleSentence"></textarea>
+          <h4>Sample Sentence:</h4>
+          <textarea class="u-full-width" placeholder="Type a sample sentence here..." id="exampleSentence"></textarea>
           </label>
-          <div class="sixColumns">
-            <label for="exampleWordID">Word ID:</label>
-            <input class="u-full-width"  placeholder="Word ID" id="exampleWordID">
-          </div>
+          <br>
           <input class="button-primary" type="submit" value="Submit">
         </form>
       </div>

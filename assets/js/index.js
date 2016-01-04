@@ -113,6 +113,13 @@ $(document).ready(function() {
       $('.col-lg-12').hide();
       $('#createNew').show();
       $('#single-word').hide();
+      $('#defineCreate').text("Define a Word!");
+      $('#exampleWordInput').show();
+      $('#exampleDefinition').show();
+      $('#exampleSentence').show();
+      $('#createNew').find('h4').show();
+      $('.button-primary').show();
+
     });
 
   //create a new word
@@ -133,13 +140,13 @@ $(document).ready(function() {
         return;
       }
 
-      // console.log(data);
-      var template = Handlebars.compile($("#show-one-word").html());
-      var newHTML = template(data);
-      $("#createNew").hide();
-      $(".container-fluid").hide();
-      $("#single-word").show();
-      $("#single-word").html(newHTML);
+      $("#defineCreate").text("Creation Successful!");
+      $('#exampleWordInput').val('').hide();
+      $('#exampleDefinition').val('').hide();
+      $('#exampleSentence').val('').hide();
+      $('#createNew').find('h4').hide();
+      $('.button-primary').hide();
+
     });
 
     e.preventDefault();
@@ -216,6 +223,4 @@ $(document).ready(function() {
   });
 
 
-
-
-});
+}); //end document ready

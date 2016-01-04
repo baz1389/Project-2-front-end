@@ -103,13 +103,13 @@ body {
     margin: 0 auto center;
 }
 
-#exampleDefinition {
-    width: 667px;
-    height: 137px;
+#exampleDefinition, #exampleSentence {
+    width: 400px;
+    height: 100px;
 }
 
-h4 {
-    text-align: center;
+#exampleWordInput {
+  width: 200px;
 }
 
 #buttonUpdate {
@@ -138,31 +138,6 @@ h4 {
     background: #CC9933;
 }
 
-.searchButton {
-  width: 75px;
-  height: 33px;
-  border: 0;
-  text-align: center;
-  vertical-align: middle;
-  background-color: #245c81;
-  border-radius: 10px;
-  color: #fff;
-  float: right;
-  /*margin-bottom: 3px;*/
-  position: absolute;
-}
-
-.searchBox {
-    width: 123px;
-    height: 40px;
-    border: 5px;
-    padding-right: 1px;
-}
-
-.searchButton:hover {
-    background: orange;
-}
-
 #single-word > h4 {
   text-align: left;
   font-size: 24px;
@@ -174,3 +149,7 @@ h4 {
   font-size: 48px;
 }
 
+#createNew {
+  text-align: center;
+
+}

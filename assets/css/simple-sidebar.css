@@ -101,6 +101,26 @@
     width: 200px;
 }
 
+.searchButton {
+  float: right;
+  height: 40px;
+  color: white;
+  border: 1px solid white ;
+  background-color: #336699;
+  position: absolute;
+}
+
+.searchBox {
+    width: 123px;
+    height: 40px;
+    border: 5px;
+    padding-right: 1px;
+}
+
+.searchButton:hover {
+    background: #CC9933;
+}
+
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
@@ -129,21 +149,22 @@
     }
 
     #logout {
-      width: 70px;
+      width: 50px;
       height: 40px;
       border: 0;
-      background-color: #245c81;
+      text-align: left;
+      background-color: #336699;
       border-radius: 10px;
       vertical-align: center;
-      color: #fff;
+      color: #CC9933;
       position: absolute;
       margin-left: 15px;
 
     }
 
     #logout:hover {
-      background: orange;
-      color: #ccc;
+
+      color: white;
    }
     #logout:active {
       background: white;
