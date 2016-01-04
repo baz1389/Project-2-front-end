@@ -114,15 +114,15 @@
 
       <script id="show-one-word" type = "text/x-handlebars-template">
         {{#each words}}
-          <h2>{{name}}</h2>
+          <h2 id="wordName">{{name}}</h2>
           <br>
           <h4>Definition</h4>
           <br>
-          <p><span id="edit-description"class="editable" contentEditable="false">{{definition}}</span></p>
+          <p><span id="edit-definition"class="editable" contentEditable="false">{{definition}}</span></p>
           <br>
           <h4>Sample Sentence</h4>
           <br>
-          <p><span id="edit-description"class="editable" contentEditable="false">{{sample_sentence}}</span></p>
+          <p><span id="edit-sentence"class="editable" contentEditable="false">{{sample_sentence}}</span></p>
           <br>
           <button id="edit-button">Edit</button>
           <button id="confirm-edit-button" data-id={{id}}>Confirm Edit</button>

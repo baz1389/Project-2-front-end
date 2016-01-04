@@ -75,7 +75,6 @@ $(document).ready(function() {
       user.token = data.user.token;
       user.id = data.user.id;
       $('.token').val(data.user.token);
-      console.log(data.user.token);
       $('.login-block').hide();
       $('#search').show();
       $('#define').show();
@@ -134,7 +133,7 @@ $(document).ready(function() {
         return;
       }
 
-      console.log(data);
+      // console.log(data);
       var template = Handlebars.compile($("#show-one-word").html());
       var newHTML = template(data);
       $("#createNew").hide();
@@ -164,17 +163,42 @@ $(document).ready(function() {
         $(".container-fluid").hide();
         $("#single-word").show();
         $("#single-word").html(newHTML);
+        $("#confirm-edit-button").hide();
 
-        // $('#word').text(name);
-        // $('#definition').text(data.words[0].definition);
-        // $('#sentence').text(data.words[0].sample_sentence);
-        // $('#wordID').text(data.words[0].id);
       });
 
     }); //end of searchWord
 
+  //updates a word
 
-  //deletes a word
+  $(document).on("click", "#edit-button", function(event){
+    event.preventDefault();
+    $(".editable").css({"border": " 1px solid red"});
+    $(".editable").attr("contentEditable", "true");
+    $("#confirm-edit-button").show();
+    $("#edit-button").hide();
+    $("#delete-button").hide();
+  });
+
+   $(document).on("click", "#confirm-edit-button", function(e){
+    e.preventDefault();
+    $(".editable").attr("contentEditable", "false");
+    $(".editable").css({"color":"", "border": ""});
+    $("#confirm-edit-button").hide();
+    $("#edit-button").show();
+    $("#delete-button").show();
+    var id = $(this).data("id");
+    var word = {
+      word: {
+        name: $("#wordName").html(),
+        definition: $("#edit-definition").html(),
+        sample_sentence: $("#edit-sentence").html()
+      }
+    }
+    mwbapi.updateWord(id, word, user.token, callback);
+  })
+
+   //deletes a word
   $(document).on("click", "#delete-button", function(e){
     e.preventDefault();
     var id = $(this).data("id");
@@ -186,43 +210,11 @@ $(document).ready(function() {
       }
       console.log(data);
       $("single-word").empty().hide();
-      $("#single-word > h2").text("Successfully deleted!");
+      $("#word").html("Successfully deleted!").show();
+
     });
   });
 
-  //updates a word
-
-  // $('#displayWordUpdateForm').on('click', function(e) {
-  //     e.preventDefault();
-
-  //     $('.col-lg-12').hide();
-  //     $('#updateForm').show();
-  // });
-
-
-  // $('#updateForm').on('submit', function(e) {
-  //   var wordId = $('#updateWordID').val();
-
-  //   var word = {
-  //     word: {
-  //       name: $('#updateWordInput').val(),
-  //       definition: $('#updateDefinition').val(),
-  //       sample_sentence: $('#updateSentence').val(),
-  //       user_id: user.id
-  //     }
-  //   }
-
-  //   mwbapi.updateWord(wordId, word, user.token, function(err, data) {
-  //     if (err) {
-  //       console.error(err);
-  //       return;
-  //     }
-  //     $('.col-lg-12').show();
-  //     $('#createNew').hide();
-  //     console.log(data);
-  //     e.preventDefault();
-  //   });
-  // });
 
 
 
