@@ -74,6 +74,8 @@ $(document).ready(function() {
 
       user.token = data.user.token;
       user.id = data.user.id;
+      $('#login > input').val('');
+      $('#register > input').val('');
       $('.token').val(data.user.token);
       $('.login-block').hide();
       $('#search').show();
@@ -99,7 +101,7 @@ $(document).ready(function() {
     mwbapi.logout(id, token, callback);
     user.token = null;
     $('.login-block').show();
-    $('#sidebar-wrapper').children().hide();
+    $('#sidebar-wrapper').find('li').hide();
     $('.container-fluid').hide();
     $('.container-fluid').hide();
     $('.row').hide();
@@ -180,14 +182,14 @@ $(document).ready(function() {
 
   $(document).on("click", "#edit-button", function(event){
     event.preventDefault();
-    $(".editable").css({"border": " 1px solid red"});
+    $(".editable").css({"border": " 2px solid #336699"});
     $(".editable").attr("contentEditable", "true");
     $("#confirm-edit-button").show();
     $("#edit-button").hide();
     $("#delete-button").hide();
   });
 
-   $(document).on("click", "#confirm-edit-button", function(e){
+  $(document).on("click", "#confirm-edit-button", function(e){
     e.preventDefault();
     $(".editable").attr("contentEditable", "false");
     $(".editable").css({"color":"", "border": ""});
@@ -203,7 +205,7 @@ $(document).ready(function() {
       }
     }
     mwbapi.updateWord(id, word, user.token, callback);
-  })
+  }); //end of update word
 
    //deletes a word
   $(document).on("click", "#delete-button", function(e){
