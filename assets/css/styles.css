@@ -5,7 +5,9 @@
 
 body {
     font-family: sans-serif;
-    background-color: #4E7DAB;
+    /*background-color: #4E7DAB;*/
+    background: url(http://thedeconstruction.org/wp-content/uploads/2014/11/words1.jpg);
+    background-size: 100%;
     color: black;
 }
 
@@ -138,6 +140,10 @@ body {
     background: #CC9933;
 }
 
+#single-word {
+    background: white;
+}
+
 #single-word > h4 {
   text-align: left;
   font-size: 24px;
@@ -170,6 +176,11 @@ body {
 
 }
 
-#page-content-wrapper {
-    background: #7BA3CA;
+.container-fluid {
+    background: white;
 }
+
+/*#page-content-wrapper {
+   background: url(http://thedeconstruction.org/wp-content/uploads/2014/11/words1.jpg);
+    background-size: 100%;
+}*/

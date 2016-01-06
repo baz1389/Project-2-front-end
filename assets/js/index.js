@@ -86,6 +86,7 @@ $(document).ready(function() {
       $('#createNew').hide();
       $('.register-block').hide();
       $('.container-fluid').show();
+      $('body').css('background', 'white');
 
     };
 
