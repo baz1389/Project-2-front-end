@@ -103,6 +103,7 @@ $(document).ready(function() {
     user.token = null;
     $('.login-block').show();
     $('#sidebar-wrapper').find('li').hide();
+    $('#sidebarTitle').show();
     $('.container-fluid').hide();
     $('.container-fluid').hide();
     $('.row').hide();
@@ -110,6 +111,8 @@ $(document).ready(function() {
     $('.u-full-width').hide();
     $('.button-primary').hide();
     $('#single-word').hide();
+    $('#createNew').find('h4').hide();
+
   }); // end of logout
 
   $('#define').click(function() {
