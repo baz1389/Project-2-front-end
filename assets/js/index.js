@@ -112,6 +112,7 @@ $(document).ready(function() {
     $('.button-primary').hide();
     $('#single-word').hide();
     $('#createNew').find('h4').hide();
+    $('body').css('background', 'url(http://thedeconstruction.org/wp-content/uploads/2014/11/words1.jpg)');
 
   }); // end of logout
 
